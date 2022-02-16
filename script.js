@@ -28,11 +28,6 @@ class Todo {
   }
 }
 
-/*<li>
-      <input type="checkbox" />
-      <button>delete</button>
-      <span>text</span>
-</li>*/
 
 function newTodo() {
   const todo = new Todo();
@@ -68,9 +63,6 @@ function renderTodo(todo) {
 }
 
 function deleteTodo(id) {
-  //find the todo to delete
-  //delete found
-  //upadte counts
   console.log("from deleteTodo");
   todos = todos.filter((todo) => todo.id !== id);
   render();
@@ -80,12 +72,6 @@ function changeTodo(id) {
   todos = todos.map((todo) =>
     todo.id === id ? { ...todo, checked: !todo.checked } : todo
   );
-  // for (let i = 0; i < todos.length; i++) {
-  //   if (todos[i].id === id) {
-  //     todos[i].checked = !todos[i].checked;
-  //     break;
-  //   }
-  // }
   uncheckedCountSpan.textContent = todos.filter((todo) => !todo.checked).length;
   saveToLocalStorage();
 }
